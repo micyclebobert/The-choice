@@ -33,6 +33,7 @@ public class GUIGameScreen {
         displayText = new TTextDisplay();
         Helper.setHeight(displayText, 1);
         Helper.setPercentWidth(displayText, 90);
+        Helper.xCenter(displayText);
         layeredPane.add(displayText, TEXT_LAYER);
 
         frame.add(layeredPane);
@@ -66,7 +67,7 @@ public class GUIGameScreen {
 
         displayText.setText(storyFrame.getDisplayText());
         displayText.setSize(displayText.getPreferredScrollableViewportSize());
-        Helper.setYFromBottom(displayText, buttons[0].getY() + Constants.TEXT_PADDING);
+        Helper.setY(displayText, buttons[0].getY() - Constants.TEXT_PADDING);
     }
 
     public static void end() {

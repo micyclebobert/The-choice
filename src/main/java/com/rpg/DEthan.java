@@ -1,6 +1,6 @@
 package com.rpg;
 
-public class DSofia extends StoryGroup {
+public class DEthan extends StoryGroup {
     public static StoryFrame atCrimeScene() {
         Pair pair1 = new Pair("Search for immediate threats or weapons left behind", e -> updateFrame(atCrimeScene2("You find a knife with dried paint on the handle—possibly the murder weapon.")));
         Pair pair2 = new Pair("Focus on the cryptic message (What you see is not always real).", e -> updateFrame(atCrimeScene2("You realize the message is a taunt meant to challenge the detectives and delay them.")));

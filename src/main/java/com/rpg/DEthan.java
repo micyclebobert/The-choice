@@ -7,16 +7,16 @@ public class DSofia extends StoryGroup {
         return new StoryFrame("The team is at Atul's house : cryptic message,shattered miror, and torn painting\n", pair1, pair2);
     } 
     public static StoryFrame atCrimeScene2(String s){
-        Pair pair1 = new Pair("Take the sketchbook to analyze patterns in the drawings", e-> updateFrame(atAbandonedFactory("You identify one recurring face in the face in the sketches a woman who appears to have been watching Atul")));
-        Pair pair2 = new Pair("Question Atul's assistant about the last few days",e-> updateFrame(atAbandonedFactory("The assistant mentins strange letters Atul had been recieving but doesn't know from who")));
-        return new StoryFrame(s+"\nA sketchbook discovered",pair1,pair2);
+        Pair pair1 = new Pair("Visit Victor Kane’s last known address to investigate", e-> updateFrame(atAbandonedFactory("You find the apartment abandoned but discover emails on a discarded laptop hinting at a collaboration with someone")));
+        Pair pair2 = new Pair("Question Atul's assistant about the last few days",e-> updateFrame(atAbandonedFactory(" The assistant appears nervous and admits to hiding letters Eleanor had received, fearing they’d escalate.")));
+        return new StoryFrame(s+"\nA sketchbook is discovered",pair1,pair2);
     }
 
     public static StoryFrame atAbandonedFactory(String s){
         GUIGameScreen.changeBackground(Helper.getImageIcon("/Warehouse.jpg"));
-        Pair pair1 = new Pair("Sneak in quietly and look for clues",e-> updateFrame(theEnd()));
-        Pair pair2 = new Pair(" Confront the masked figure directly.",e->updateFrame(theEnd()));
-        return new StoryFrame(s+"The team is in at the abandoned factory",pair1,pair2);
+        Pair pair1 = new Pair("Burst in and overpower the masked figure",e-> updateFrame(theEnd()));
+        Pair pair2 = new Pair("Distract the figure while looking for a way to rescue Victor",e->updateFrame(theEnd()));
+        return new StoryFrame(s+"The team is at the abandoned factory",pair1,pair2);
     }
     
     public static StoryFrame theEnd(){

@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-public class GUIEpisodeScreen {
+public class GUIPlayerSelectScreen {
 
     private static TFullSceenFrame frame;
     private static ImageIcon icon2 = Helper.getImageIcon("/rsz_1boy.jpg");
@@ -24,21 +24,21 @@ public class GUIEpisodeScreen {
         button1 = new TMenuButton();
         Helper.setPercentY(button1, 60);
         button1.addActionListener(e -> onButton1Click());
-        button1.setText("Episode 1");
+        button1.setText("Sofia");
         button1.setBackground(Color.red);
         button1.setForeground(Color.white);
 
         button2 = new TMenuButton();
         Helper.setPercentY(button2, 70);
         button2.addActionListener(e -> onButton2Click());
-        button2.setText("Episode 2");
+        button2.setText("Ethan");
         button2.setBackground(Color.blue);
         button2.setForeground(Color.white);
 
         button3 = new TMenuButton();
         Helper.setPercentY(button3, 80);
         button3.addActionListener(e -> onButton3Click());
-        button3.setText("Episode 3");
+        button3.setText("Cid Kagenou");
         button3.setBackground(Color.blue);
         button3.setForeground(Color.white);
 
@@ -66,7 +66,6 @@ public class GUIEpisodeScreen {
     }
 
     public static void onButton1Click() {
-        startGame();
     }
 
     public static void onButton2Click() {

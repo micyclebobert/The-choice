@@ -32,8 +32,8 @@ public class GUIGameScreen {
 
         displayText = new TTextDisplay();
         Helper.setHeight(displayText, 1);
-        Helper.setPercentWidth(displayText, 90);
-        Helper.xCenter(displayText);
+        Helper.setPercentWidth(displayText, 50);
+        Helper.setPercentXFromRight(displayText,20);
         layeredPane.add(displayText, TEXT_LAYER);
 
         frame.add(layeredPane);

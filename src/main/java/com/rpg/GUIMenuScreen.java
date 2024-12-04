@@ -13,7 +13,6 @@ public class GUIMenuScreen {
     private static TMenuButton button2;
     private static TMenuButton button3;
     private static JLabel label;
-    private static StoryGroup group;
 
     public static void start() {
         label = new JLabel();
@@ -66,8 +65,6 @@ public class GUIMenuScreen {
     }
 
     public static void onButton1Click() {
-        group = new StoryGroupExample();
-        startGame();
     }
 
     public static void onButton2Click() {
@@ -80,7 +77,6 @@ public class GUIMenuScreen {
 
     public static void startGame() {
         end();
-        GUIGameScreen.start(group.startingFrame());
     }
 
 }

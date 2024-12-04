@@ -1,5 +1,6 @@
 package com.rpg;
 
+import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.JTextArea;
@@ -12,6 +13,7 @@ public class TTextDisplay extends JTextArea {
         this.setOpaque(false);
         this.setEditable(false);
         this.setFocusable(false);
-        this.setFont(new Font(Font.SERIF,Font.BOLD,14));
+        this.setForeground(Color.WHITE);
+        this.setFont(new Font("Calibri",Font.BOLD,25));
     }
 }

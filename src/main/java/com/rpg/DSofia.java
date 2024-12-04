@@ -18,8 +18,9 @@ public class DSofia extends StoryGroup {
         Pair pair2 = new Pair(" Confront the masked figure directly.",e->updateFrame(theEnd()));
         return new StoryFrame(s+"The team is in at the abandoned factory",pair1,pair2);
     }
-
+    
     public static StoryFrame theEnd(){
+        GUIGameScreen.changeBackground(Helper.getImageIcon("/End.jpg"));
         Pair pair1 = new Pair("Exit", e->Main.exit(0));
         return new StoryFrame("The end", pair1);
     }

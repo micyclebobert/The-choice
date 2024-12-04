@@ -65,6 +65,7 @@ public class GUIMenuScreen {
     }
 
     public static void onButton1Click() {
+        startGame();
     }
 
     public static void onButton2Click() {
@@ -77,6 +78,7 @@ public class GUIMenuScreen {
 
     public static void startGame() {
         end();
+        GUIGameScreen.start(new DSofia().startingFrame(), "/Sofia.jpg");
     }
 
 }

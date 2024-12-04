@@ -1,5 +1,6 @@
 package com.rpg;
 
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import java.awt.event.ActionListener;
@@ -15,13 +16,15 @@ public class GUIGameScreen {
     public final static Integer /*       */ TEXT_LAYER = (Integer) (1);
     public final static Integer /*     */ BUTTON_LAYER = (Integer) (2);
 
-    public static void start(StoryFrame staringStory) {
+    public static void start(StoryFrame staringStory, String localPath) {
         frame = new TFullSceenFrame();
 
         layeredPane = new JLayeredPane();
         Helper.setFullScreen(layeredPane);
 
         imageLabel = new JLabel();
+        imageLabel.setIcon(Helper.getImageIcon(localPath));
+        imageLabel.setSize(imageLabel.getPreferredSize());
         Helper.setFullScreen(imageLabel);
         layeredPane.add(imageLabel, BACKGROUND_LAYER);
 
@@ -32,8 +35,8 @@ public class GUIGameScreen {
 
         displayText = new TTextDisplay();
         Helper.setHeight(displayText, 1);
-        Helper.setPercentWidth(displayText, 50);
-        Helper.setPercentXFromRight(displayText,20);
+        Helper.setPercentSize(displayText, 50, 50);
+        Helper.setPercentLocation(displayText, 50, 40);
         layeredPane.add(displayText, TEXT_LAYER);
 
         frame.add(layeredPane);
@@ -44,7 +47,6 @@ public class GUIGameScreen {
     }
 
     public static void updateFrame(StoryFrame storyFrame) {
-        imageLabel.setIcon(storyFrame.getBackground());
 
         int i = 0;
 
@@ -66,8 +68,12 @@ public class GUIGameScreen {
         }
 
         displayText.setText(storyFrame.getDisplayText());
-        displayText.setSize(displayText.getPreferredScrollableViewportSize());
-        Helper.setY(displayText, buttons[0].getY() - Constants.TEXT_PADDING);
+        // displayText.setSize(displayText.getPreferredScrollableViewportSize());
+        // Helper.setY(displayText, buttons[0].getY() - Constants.TEXT_PADDING);
+    }
+
+    public static void changeBackground(ImageIcon icon) {
+        imageLabel.setIcon(icon);
     }
 
     public static void end() {

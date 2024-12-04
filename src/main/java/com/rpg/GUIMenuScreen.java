@@ -1,20 +1,31 @@
 package com.rpg;
 
 import java.awt.Color;
+import java.awt.Font;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.SwingConstants;
 
 public class GUIMenuScreen {
     private static TFullSceenFrame frame;
     private static ImageIcon icon2 = Helper.getImageIcon("/rsz_1boy.jpg");
+    private static JLabel textLabel;
     private static TMenuButton button1;
     private static TMenuButton button2;
     private static TMenuButton button3;
     private static JLabel label;
 
     public static void start() {
+        
+
+        textLabel = new JLabel("The Choice", SwingConstants.CENTER);
+        textLabel.setFont(new Font("Arial", Font.BOLD, 40));
+        textLabel.setForeground(Color.WHITE);
+        textLabel.setSize(Helper.getScreenWidth(), 50);
+        Helper.setPercentY(textLabel, 20);
+
         label = new JLabel();
         label.setIcon(icon2);
         label.setBounds(100, 0, 500, 500);
@@ -43,11 +54,12 @@ public class GUIMenuScreen {
 
         frame = new TFullSceenFrame(false);
 
-        frame.setVisible(true);
+        frame.add(textLabel);
         frame.add(button1);
         frame.add(button2);
         frame.add(button3);
         frame.add(label);
+        frame.setVisible(true);
     }
 
     /**
@@ -65,20 +77,16 @@ public class GUIMenuScreen {
     }
 
     public static void onButton1Click() {
-        startGame();
+        end();
+        GUIEpisodeScreen.start();
     }
 
     public static void onButton2Click() {
-        JOptionPane.showMessageDialog(null, "Iftekhar, Jobayer", "About us", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Iftekhar, Jobayer, Suhrid", "About us", JOptionPane.INFORMATION_MESSAGE);
     }
 
     public static void onButton3Click() {
         Main.exit(0);
-    }
-
-    public static void startGame() {
-        end();
-        GUIGameScreen.start(new DSofia().startingFrame(), "/Sofia.jpg");
     }
 
 }

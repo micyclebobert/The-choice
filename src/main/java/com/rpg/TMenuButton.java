@@ -5,7 +5,7 @@ import javax.swing.JButton;
 public class TMenuButton extends JButton {
 
     public TMenuButton() {
-        this.setSize(100, 30);
+        this.setSize(150, 30);
         this.setFocusable(false);
         Helper.xCenter(this);
     }

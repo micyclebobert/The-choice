@@ -1,10 +1,8 @@
 package com.rpg;
 
-import java.awt.Color;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 public class GUIPlayerSelectScreen {
 
@@ -22,25 +20,19 @@ public class GUIPlayerSelectScreen {
         label.setVisible(false);
 
         button1 = new TMenuButton();
-        Helper.setPercentY(button1, 60);
+        Helper.setPercentY(button1, 50);
         button1.addActionListener(e -> onButton1Click());
         button1.setText("Sofia");
-        button1.setBackground(Color.red);
-        button1.setForeground(Color.white);
 
         button2 = new TMenuButton();
-        Helper.setPercentY(button2, 70);
+        Helper.setPercentY(button2, 60);
         button2.addActionListener(e -> onButton2Click());
         button2.setText("Ethan");
-        button2.setBackground(Color.blue);
-        button2.setForeground(Color.white);
 
         button3 = new TMenuButton();
-        Helper.setPercentY(button3, 80);
+        Helper.setPercentY(button3, 70);
         button3.addActionListener(e -> onButton3Click());
-        button3.setText("Cid Kagenou");
-        button3.setBackground(Color.blue);
-        button3.setForeground(Color.white);
+        button3.setText("Cid");
 
         frame = new TFullSceenFrame(false);
 
@@ -66,18 +58,15 @@ public class GUIPlayerSelectScreen {
     }
 
     public static void onButton1Click() {
+        end();
+        GUIGameScreen.start(new DSofia().startingFrame(), "/Sofia.jpg");
     }
 
     public static void onButton2Click() {
-        JOptionPane.showMessageDialog(null, "Iftekhar, Jobayer", "About us", JOptionPane.INFORMATION_MESSAGE);
+
     }
 
     public static void onButton3Click() {
-        Main.exit(0);
-    }
-
-    public static void startGame() {
-        end();
     }
 
 }

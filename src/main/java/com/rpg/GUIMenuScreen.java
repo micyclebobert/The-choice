@@ -62,16 +62,6 @@ public class GUIMenuScreen {
         frame.setVisible(true);
     }
 
-    /**
-     * After frame is set to visible
-     * you should use this if you make
-     * any major change
-     */
-    public static void updateFrame() {
-        frame.revalidate();
-        frame.repaint();
-    }
-
     public static void end() {
         frame.dispose();
     }
